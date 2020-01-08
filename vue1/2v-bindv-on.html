@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-bind:title="msg">{{msg}}</p>
+        <input v-on:input="changeHand">
+        <input type="checkbox" >
+    </div>
+</body>
+</html>
+<script>
+    var message = "hellow vue";
+
+
+    var vm = new Vue({
+        el: "#app",  // element 可以写css选择器或node节点 表示这个html归vue管
+        data: {     // 数据对象
+            msg: message,
+
+        },
+        methods: {
+            changeHand(ev){
+                this.msg = ev.target.value;
+            }
+        }
+    })
+
+</script>

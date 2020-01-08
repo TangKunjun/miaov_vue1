@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+    </div>
+</body>
+</html>
+<script>
+    var message = "hellow vue";
+
+    // 根实例启动应用
+    //  传入一个对象作为参数告诉vue要做什么事
+    var vm = new Vue({
+        el: "#app",  // element 可以写css选择器或node节点 表示这个html归vue管
+        data: {     // 数据对象
+            msg: message
+        }
+    })
+
+    vm.msg = "改写了";
+</script>
