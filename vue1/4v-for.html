@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input v-model="text"> <button v-on:click="send">发送</button>
+        <div v-for="(item, i) of msg">{{item}} {{i}}</div>
+        <div v-for="(value, key, i) of obj">{{key}}:{{value}} ---- {{i}}</div>
+    </div>
+</body>
+</html>
+<script>
+    var message = ["a","b","c","d","e","f"];
+
+
+    var vm = new Vue({
+        el: "#app",  // element 可以写css选择器或node节点 表示这个html归vue管
+        data: {     // 数据对象
+            msg: message,
+            text: "",
+            obj: {
+                a: "b",
+                c: "d",
+                e: "f",
+                g: "h"
+            },
+            check: true
+        },
+        methods: {
+            send(ev) {
+                this.msg.unshift(this.text);
+                this.text = "";
+            }
+        }
+    })
+
+</script>
