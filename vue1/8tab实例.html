@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+    <style>
+        .red{color: red}
+    </style>
+</head>
+<body>
+<div id="app">
+    <input type="button" v-for="item, i in msg"
+           v-bind:value="item.title"
+           v-bind:class="{red: index === i}"
+           v-on:click="onClick($event,i)"
+    >
+    <div v-for="item, i in msg" v-bind:style="{display: index===i?'block':'none'}">
+        <p v-for="value in item.list">{{value.subTitle}}</p>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    // class = "{class名: 布尔值}"
+    // style="{display: 布尔值?'block':'none'}"
+    // 事件语法 v-on:事件名='事件处理函数'
+
+    // 传参
+    // 事件语法 v-on:事件名='事件处理函数(参数)'
+
+    // v-on:可以简写成 @事件名
+    // 不传参自带ev， 传参数需要手动传$event
+
+    let tabData = [
+        {
+            title: "我是第一个标题",
+            list: [
+                {subTitle: "第一个副标题"},
+                {subTitle: "第一个副标题2"},
+
+            ]
+        },
+        {
+            title: "我是第二个标题",
+            list: [
+                {subTitle: "第二个副标题"},
+                {subTitle: "第二个副标题2"},
+
+            ]
+        },
+        {
+            title: "我是第三个标题",
+            list: [
+                {subTitle: "第三个副标题"},
+                {subTitle: "第三个副标题2"},
+
+            ]
+        },
+    ]
+
+
+    var vm = new Vue({
+        el: "#app",  // element 可以写css选择器或node节点 表示这个html归vue管
+        data: {     // 数据对象
+            msg: tabData,
+            index: 0,
+        },
+        methods: {
+            onClick(ev, index) {
+                console.log(ev);
+                this.index = index;
+            }
+        }
+    })
+</script>

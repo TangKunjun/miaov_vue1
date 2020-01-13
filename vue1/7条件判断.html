@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-if="isShow">{{msg}}</p>
+        <p v-show="isShow">{{msg}}频繁切换不要用v-if影响性能</p>
+        <p v-hide="isShow">{{msg}}234</p>
+    </div>
+</body>
+</html>
+<script>
+    var message = ["a","b","c","d","e","f"];
+
+
+    var vm = new Vue({
+        el: "#app",  // element 可以写css选择器或node节点 表示这个html归vue管
+        data: {     // 数据对象
+            msg: message,
+            isShow: false
+        },
+    })
+</script>

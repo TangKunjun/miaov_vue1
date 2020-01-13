@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+    </div>
+</body>
+</html>
+<script>
+    var message = ["a","b","c","d","e","f"];
+
+
+    var vm = new Vue({
+        el: "#app",  // element 可以写css选择器或node节点 表示这个html归vue管
+        data: {     // 数据对象
+            msg: message,
+        },
+    })
+    // push pop shift unshift splice sort reverse 这些方法并不是数组的方法了，只是同名，通过数据劫持改变了元数据，
+    // 所以视图会变
+    // vm.msg.push(1231313);
+
+    vm.msg.map(value => value + "我会不会变");
+
+    // 也不能通过下标改变 (如果将上面的push解开注释就会生效，因为数组的改变不是按顺序改变的 而是一次性改变)
+    vm.msg[0] = "改变不了";
+</script>

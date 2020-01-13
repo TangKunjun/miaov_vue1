@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <p>{{add.data}}</p>
+        <p>{{add.info}}</p>
+        <p>{{add.content}}</p>
+    </div>
+</body>
+</html>
+<script>
+    var message = ["a","b","c","d","e","f"];
+
+
+    var vm = new Vue({
+        el: "#app",  // element 可以写css选择器或node节点 表示这个html归vue管
+        data: {     // 数据对象
+            msg: "adf",
+            add: {}
+        },
+    })
+    // vm.add.data = "我是新加的"; // 无效的 因为在data上面没有先定义
+
+    //第一种方法：调用Vue的静态方法 Vue.set(target, prop, value);
+    Vue.set(vm.add, "data", "我是新加的")
+
+    // 第二种方法：实例上面的方法vm.$set(target, prop, value);
+    vm.$set(vm.add, "info", "我是新加的第二个")
+
+    // 第三种方法： 重新赋值
+    vm.add = {...vm.add, content: "重新赋值"}
+
+</script>
