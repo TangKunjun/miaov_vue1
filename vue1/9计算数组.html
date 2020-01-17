@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <p>{{msg.split("").reverse().join("")}}</p>
+
+        <p>{{reverserMessage}}</p>
+        <p>{{reverserMessage}}</p>
+        <p>{{reverserMessage}}</p>
+
+
+        <input v-model="newMsgChange">
+        {{newMsgChange}}
+    </div>
+</body>
+</html>
+<script>
+    var message = "hellow vue";
+
+    // 计算属性 computed 将数据再次处理 类似于angular中的通道
+    // 还能做成对象 分别含有get方法和set方法 当值发生变化的时候 触发set方法 默认为get方法
+
+    var vm = new Vue({
+        el: "#app",  // element 可以写css选择器或node节点 表示这个html归vue管
+        data: {     // 数据对象
+            msg: message,
+            newMsg: "",
+            list: []
+        },
+        computed: {
+            reverserMessage() {
+                console.log("我在模版调用多次也只执行一次");
+                return this.msg.split("").reverse().join("")
+            },
+            newMsgChange:{
+                get() {
+                    console.log("取值");
+                    return this.newMsg;
+                },
+                set(value) {
+                    console.log("设置值");
+                    console.log(value);
+                    this.newMsg = "234"+this.newMsg;
+                }
+            }
+        },
+    })
+
+    vm.msg = "改写了";
+</script>
