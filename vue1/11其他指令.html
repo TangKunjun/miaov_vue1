@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+    <style>
+        [v-cloak]{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" v-cloak>
+        <p>{{msg}}</p>
+        <p v-text="msg"></p>
+    </div>
+</body>
+</html>
+<script>
+    var message = "hellow vue";
+
+    // 根实例启动应用
+    //  传入一个对象作为参数告诉vue要做什么事
+    var vm = new Vue({
+        el: "#app",  // element 可以写css选择器或node节点 表示这个html归vue管
+        data: {     // 数据对象
+            msg: message
+        }
+    })
+
+    vm.msg = "改写了";
+
+    // v-text  和{{}} 一样  并且在未解析前不会显示大括号
+    // v-html  插入元素
+    // v-cloak 隐藏未编译的标签直到实例准备完毕
+    // v-once  只渲染一次之后不再渲染 视为静态内容 用于优化更新性能
+</script>

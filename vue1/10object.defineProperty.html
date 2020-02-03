@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{newData.title}}</h1>
+        <button @click="changes">点击改变</button>
+        <p>{{newData.msg}}</p>
+        <ul>
+            <li v-for="item in newData.list">{{item}}</li>
+        </ul>
+    </div>
+
+    <div>
+        <h1 id="title"></h1>
+        <button id="btn">点击改变</button>
+        <p id="msg"></p>
+    </div>
+</body>
+</html>
+<script>
+    var data = {
+        title: "我是vue的绑定",
+        msg: "我还没有被改变",
+        list: ["绑定1", "绑定2", "绑定3"]
+    }
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            newData: data,
+        },
+        methods: {
+            changes() {
+                this.newData.msg = "我已经被改变"
+            }
+        }
+    });
+
+    // 我们传统的js改变数据的同时改变视图 是需要对视图dom进行操作
+    // Object.defineProperty则是通过对数据进行劫持（代理），把数据转换成访问器的方式
+    /*
+        getter  获取属性的时候触发
+        setter  设置属性的时候触发
+    */
+
+    // Object.defineProperty有多个描述符
+
+    var obj = {
+        title: '我是title'
+    };
+
+    Object.defineProperty(obj, 'adds', {
+        value: "我是新添加的",
+        enumerable: true
+    });
+    Object.defineProperty(obj, 'title', {
+        value: '我被改写了',
+        writable: false,   // 为flase将不会被改写
+        enumerable: false,  // 是否可枚举
+        configurable: false  // 能否被删除
+    })
+
+    obj.title = '我再次被改写了';
+
+    delete obj.title;
+
+    console.log(obj);
+
+    for (var item in obj) {       // 因为enumerable设置为false所以无法遍历, 然后在adds这个属性上面设置了ture所以只打印adds这个属性
+        console.log(obj[item])
+    }
+
+
+
+
+    // Object.defineProperty的get和set
+
+    var newObj = {
+        title: "我是title"
+    }
+    var title = "我是新title";
+    Object.defineProperty(newObj, "title", {
+        get() {
+            console.log("有人访问title 所以触发了我");
+            return title;
+        },
+        set(value) {
+            console.log("有人设置title 所以触发了我");
+            title = value;
+        }
+
+    })
+
+    newObj.title = "新的值";
+    console.log(newObj.title);
+
+
+
+    // 利用Object.defineProperty做一个数据改变视图也改变（根源还是操作dom）
+
+    var title = document.getElementById("title");
+    var msg = document.getElementById("msg");
+    var btn = document.getElementById("btn");
+
+    var domData = {
+        title: "Object.defineProperty改变视图",
+        msg: "我没有改变"
+    }
+
+    observer(domData);
+
+    function observer(obj) {
+        Object.keys(obj).forEach(function (item) {
+            defineReactive(obj, item, obj[item]);
+        })
+    }
+    function defineReactive(obj, key, value) {
+        Object.defineProperty(obj,key, {
+            get() {
+                return value
+            },
+            set(val) {
+                msg.innerText = val;
+                value = val;
+            }
+        })
+    }
+
+
+    title.innerText = domData.title;
+    msg.innerText = domData.msg;
+
+    btn.onclick = function () {
+        domData.msg = "我改变了";  // 由于进行了数据劫持所以只要赋值 视图就会改变
+    };
+</script>

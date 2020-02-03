@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a href="http://www.baidu.com" v-on:click="changeHand">百度</a>
+        <a href="http://www.baidu.com" v-on:click.prevent>百度</a>
+    </div>
+</body>
+</html>
+<script>
+
+
+    /*
+        事件修饰符
+        方法只处理逻辑而不处理事件的细节
+
+        @事件名.修饰符.修饰符 = ""
+        .stop       阻止冒泡
+        .prevent    阻止默认行为
+        .capture    添加捕获
+        .self       只能是该事件源触发 冒泡不会触发
+        .once       只触发一次
+
+        按键修饰符
+        .enter      回车键触发
+        .tab        tab建触发
+        .delete     删除键触发
+        .esc        esc键触发
+        .space      空格键触发
+        .up         上
+        .down       下
+        .left       左
+        .right      右
+        其他按键用按键的键值代替
+
+        如v-on:keyup.60="keyUp";
+     */
+
+    var message = "hellow vue";
+
+
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            msg: message,
+
+        },
+        methods: {
+            changeHand(ev){
+                ev.preventDefault();   // vue不建议这样写
+            }
+        }
+    })
+
+</script>
