@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue实战开发/src/vue.js"></script>
+</head>
+<body>
+    <div id="app" >
+        <a v-bind:class="1 > 0 ? 'a' : 'b'">以三目的形式设置class</a>
+        <div v-bind:class="{c: true}">以布尔值设置class</div>
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    // render函数比较接近编译器
+
+    var vm = new Vue({
+        el: "#app",  // element 可以写css选择器或node节点 表示这个html归vue管
+
+        render(createElement){
+            var vnode = createElement(
+                "ul",
+                {class: "aa", style: {color:"red"},
+                    attrs: {    // 自定义属性
+                        abs: "自定义"
+                    },
+                    domProps: {  // dom属性
+                        // innerHTML: "<li>我是html</li>"
+                    },
+                    on: {   // 定义事件
+                        click: function () {
+                            alert("123")
+                        }
+                    }
+                },
+                [createElement("li", 1), createElement("li", 2), createElement("li", 3)]
+            )
+            console.log(vnode);  // 这个就是虚拟dom
+            return vnode
+        }
+    })
+
+</script>

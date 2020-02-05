@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue实战开发/src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+    </div>
+</body>
+</html>
+
+<script type="x-template" id="tem">
+    <div>我也是tem</div>
+</script>
+
+<script>
+
+    // template根节点只能有一个
+
+    var message = "hellow vue";
+    var tem = "<div>我是template</div>"
+
+
+    var vm = new Vue({
+        el: "#app",  // element 可以写css选择器或node节点 表示这个html归vue管
+        data: {     // 数据对象
+            msg: message
+        },
+        template: "#tem" //tem
+    })
+
+    vm.msg = "改写了";
+</script>

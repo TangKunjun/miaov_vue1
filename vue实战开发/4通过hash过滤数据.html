@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<style>
+    body {
+        margin:0;
+        background-color: #fafafa;
+        font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    h2{
+        margin:0;
+        font-size: 12px;
+    }
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    input {
+        outline: 0;
+    }
+
+    button {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: none;
+        font-size: 100%;
+        vertical-align: baseline;
+        font-family: inherit;
+        font-weight: inherit;
+        color: inherit;
+        outline: 0;
+    }
+
+    ul {
+        padding:0;
+        margin:0;
+        list-style: none;
+    }
+
+    .page-top {
+        width: 100%;
+        height: 40px;
+        background-color: #db4c3f;
+    }
+
+    .page-content {
+        width: 50%;
+        margin: 0px auto;
+    }
+
+    .page-content h2{
+        line-height: 40px;
+        font-size: 18px;
+        color: #fff;
+    }
+
+    .main {
+        width: 50%;
+        margin: 0px auto;
+        box-sizing:border-box;
+    }
+
+    .task-input {
+        width: 99%;
+        height:30px;
+        outline: 0;
+        border: 1px solid #ccc;
+    }
+
+    .task-count{
+        display: flex;
+        margin:10px 0;
+    }
+
+    .task-count li {
+        padding-left: 10px;
+        flex: 1;
+        color: #dd4b39;
+    }
+
+    .task-count li:nth-child(1){
+        padding: 5px 0 0 10px;
+    }
+
+    .action {
+        text-align: center;
+        display: flex;
+    }
+    .action a {
+        margin: 0px 10px;
+        flex: 1;
+        padding: 5px 0;
+        color: #777;
+
+    }
+
+    .action a:nth-child(3){
+        margin-right: 0;
+    }
+
+    .active {
+        border: 1px solid rgba(175, 47, 47, 0.2);
+    }
+
+    .tasks {
+        background-color: #fff;
+    }
+    .no-task-tip {
+        padding:10px 0 10px 10px;
+        display: block;
+        border-bottom: 1px solid #ededed;
+        color:#777;
+    }
+
+    .big-title {
+        color: #222;
+    }
+
+
+    .todo-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .todo-list li {
+        position: relative;
+        font-size: 16px;
+        border-bottom: 1px solid #ededed;
+    }
+
+    .todo-list li:hover {
+        background-color: #fafafa;
+    }
+
+
+    .todo-list li.editing {
+        border-bottom: none;
+        padding: 0;
+    }
+
+    .todo-list li.editing .edit {
+        display: block;
+        width: 506px;
+        padding: 13px 17px 12px 17px;
+        margin: 0 0 0 43px;
+    }
+
+    .todo-list li.editing .view {
+        display: none;
+    }
+
+    .todo-list li .toggle {
+        text-align: center;
+        width: 40px;
+        /* auto, since non-WebKit browsers doesn't support input styling */
+        height: auto;
+        position: absolute;
+        top: 5px;
+        bottom: 0;
+        margin: auto 0;
+        /*border: none; !* Mobile Safari *!*/
+        /*-webkit-appearance: none;*/
+        /*appearance: none;*/
+    }
+
+    .toggle {
+        text-align: center;
+        width: 40px;
+        /* auto, since non-WebKit browsers doesn't support input styling */
+        height: auto;
+        position: absolute;
+        top: 5px;
+        bottom: 0;
+        margin: auto 0;
+        /*border: none; !* Mobile Safari *!*/
+        /*-webkit-appearance: none;*/
+        /*appearance: none;*/
+    }
+
+    .toggle:after {
+        content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="40" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+    }
+
+    .toggle:checked:after {
+        content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="40" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+    }
+
+    .todo-list li label {
+        white-space: pre-line;
+        word-break: break-all;
+        padding: 15px 60px 15px 15px;
+        margin-left: 45px;
+        display: block;
+        line-height: 1.2;
+        transition: color 0.4s;
+    }
+
+    .todo-list li.completed label {
+        color: #d9d9d9;
+        text-decoration: line-through;
+    }
+
+    /*.tip-toggle {
+        padding-left: 0;
+        position: relative;
+    }
+
+    .tip-toggle .toggle {
+        top: -2px;
+    }
+
+    .tip-toggle span {
+        margin-left: 45px;
+    }*/
+
+    .todo-list li .destroy {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 10px;
+        bottom: 0;
+        width: 40px;
+        height: 40px;
+        margin: auto 0;
+        font-size: 30px;
+        color: #cc9a9a;
+        margin-bottom: 11px;
+        transition: color 0.2s ease-out;
+    }
+
+    .todo-list li .destroy:hover {
+        color: #af5b5e;
+    }
+
+    .todo-list li .destroy:after {
+        content: '脳';
+    }
+
+    .todo-list li:hover .destroy {
+        display: block;
+    }
+
+    .todo-list li .edit {
+        display: none;
+    }
+
+    .todo-list li.editing:last-child {
+        margin-bottom: -1px;
+    }
+</style>
+<body>
+        <div class="page-top">
+            <div class="page-content">
+                <h2>任务计划列表</h2>
+            </div>
+        </div>
+        <div class="main">
+            <h3 class="big-title">添加任务：</h3>
+            <input type="text" placeholder="例如：吃饭睡觉打豆豆；   提示： +回车即可添加任务" class="task-input"
+                   @keyup.enter="addTodo"
+                   v-model="todo"
+            >
+            <ul class="task-count" v-show="list.length">
+                <li> {{noCheckNum}}个任务未完成</li>
+                <li class="action">
+                    <a href="#0" class="active">所有任务</a>
+                    <a href="#1">未完成的任务</a>
+                    <a href="#2">完成的任务</a>
+                </li>
+            </ul>
+            <h3 class="big-title">任务列表</h3>
+            <div class="tasks">
+                <span class="no-task-tip" v-show="!list.length">还没有添加任何任务</span>
+                <ul class="todo-list">
+                    <li class="todo" v-for="item in filterList" :class="{completed: item.completed, editing: item === editTodos}">
+                        <div class="view">
+                            <input type="checkbox" v-model="item.completed" class="toggle">
+                            <label @dblclick="editTodo(item)">{{item.title}}</label>
+                            <button class="destroy" @click="deleteTodo(item)" ></button>
+                        </div>
+                        <input type="text" class="edit" v-model="item.title"
+                               @blur="editTodoed(item)"
+                               @keyup.13="editTodoed(item)"
+                               @keyup.esc="noeditTod(item)"
+                               v-focus="item === editTodos">
+                    </li>
+                </ul>
+            </div>
+        </div>
+</body>
+</html>
+
+<script>
+    var stro = {
+        save(data) {
+            window.localStorage.setItem('data', JSON.stringify(data));
+        },
+        get() {
+            return JSON.parse(window.localStorage.getItem('data'));
+        }
+    };
+
+    var list = stro.get() || [];
+    var filter = {
+        "0": function (list) {
+            return list
+        },
+        "1": function (list) {
+            return list.filter(value => !value.completed)
+        },
+        "2": function (list) {
+            return list.filter(value => value.completed)
+        }
+    }
+    var vm = new Vue({
+        el: ".main",
+        data: {
+            list,
+            todo: "",
+            editTodos: "",
+            oldTodos: "",
+            visibility: "0"
+        },
+        watch: {  // 监控list 属性 当这个属性对应的值发生变化就会执行
+          // list: function () {  // 这样写只能监控到list数据的第一层变化 监控不到更深层 类似于浅拷贝
+          //     stro.save(this.list);
+          // }
+            list: {    // 更深层次监控数据
+                handler: function () {
+                    stro.save(this.list);
+                },
+                deep: true
+            }
+        },
+        computed: {
+            noCheckNum: function (){
+                return this.list.filter(v => !v.completed).length
+            },
+            filterList: function () {
+                return filter[this.visibility] ? filter[this.visibility](list) : filter["0"];
+            }
+        },
+        methods: {
+            addTodo(ev) {
+                this.list.push({
+                    title: this.todo
+                });
+                this.todo = "";
+            },
+            deleteTodo(item) {
+                var index = this.list.indexOf(item);
+                this.list.splice(index, 1);
+            },
+            editTodo(item) {
+                this.oldTodos = item.title;
+                this.editTodos = item;
+            },
+            editTodoed(item) {
+                this.editTodos = ''
+            },
+            noeditTod(item) {
+                item.title = this.oldTodos;
+                this.editTodos = ''
+            }
+        },
+        directives: {  // 自定义指令
+            "focus": {
+                update(el, binding) {
+                    if (binding.value) {
+                        el.focus();
+                    }
+                }
+            }
+        }
+    })
+
+    watchHashChange();
+    function watchHashChange() {
+            var hash = window.location.hash.slice(1);
+            vm.visibility = hash;
+    }
+    window.addEventListener("hashchange", watchHashChange)
+</script>
