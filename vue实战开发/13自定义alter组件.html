@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<style>
+    p,h4{
+        margin:0;
+    }
+    .modal{
+        width: 500px;
+        background-color: #fff;
+        border: 1px solid rgba(0,0,0,.2);
+        border-radius: 6px;
+        box-shadow: 0 3px 9px rgba(0,0,0,.5);
+
+    }
+    .modal-header {
+        padding: 15px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    .modal-content div {
+        padding: 20px;
+    }
+    .modal-footer {
+        padding: 15px;
+        text-align: right;
+        border-top: 1px solid #e5e5e5;
+    }
+    .btn {
+        padding: 5px 15px;
+        border: none;
+        outline: none;
+    }
+    .blue {
+        color: #fff;
+        background-color: #39f;
+        border-color: #39f;
+    }
+</style>
+<body>
+    <div class="main">
+        <model @on-ok="okHanld" @on-no="onHanld"></model>
+        <model modal-title="模态框标题">
+            <ul slot="modal-content">
+                <li v-for="item in list">
+                    {{item}}
+                </li>
+            </ul>
+            <div slot="modal-footer">
+                <button @click="okHanld">确定</button>
+                <button @click="onHanld">取消</button>
+            </div>
+        </model>
+    </div>
+</body>
+</html>
+
+<script>
+
+    // slot 类似于angular的ng-content 混合子组件的内容
+    Vue.component('model', {
+        props: {
+            modalTitle: {
+                type: String,
+                default: "提醒"
+            }
+        },
+        template: `
+         <div class="modal">
+                    <div class="modal-header">
+                        <h4>{{modalTitle}}</h4>
+                    </div>
+                    <div class="modal-content">
+                        <div>
+                            <slot name="modal-content">在这里添加内容</slot>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <slot name="modal-footer">
+                            <input class="btn blue" type="button" value="确定" @click="okHandle" />
+                            <input class="btn" type="button" value="取消" @click="cancelHandle" />
+                        </slot>
+
+                    </div>
+                </div>
+        `,
+        methods: {
+            okHandle() {
+                this.$emit("on-ok")
+            },
+            cancelHandle() {
+                this.$emit("on-no")
+            }
+        }
+    });
+
+
+    new Vue({
+        el: ".main",
+        data: {
+            list: [..."苗圩课题"]
+        },
+        methods: {
+            okHanld() {
+                alert("确定了")
+            },
+            onHanld() {
+                alert("取消了")
+            },
+
+        }
+    })
+</script>

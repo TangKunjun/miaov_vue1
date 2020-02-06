@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<body>
+      <div class="main">
+        <h2>自定义组件</h2>
+          {{count}}
+        <my-select :value="count" @goparent="getChildData"></my-select>
+
+      </div>
+</body>
+</html>
+
+<script>
+
+
+    Vue.component('my-select', {
+        data: function() {    // 主键的数据必须是函数形式 这样才能独立 如果是对象形式 会共用
+            return {
+                val: this.value
+            };
+        },
+        // 保证value的类型为数值
+        // props: ["value"],   // 接收父组件传来的值
+        props: {
+            value: {
+                // default: 10,  // 默认值 也可以写出函数形式
+                // type: Number,  // 值的类型
+                // type: [Number, String],  // 值的类型
+                // required: true  // 必填
+                validator: function (value) {  // 自定义验证 必须小于10
+                    return value < 10
+                }
+            }
+        },
+        template: `<div>
+                <h1>我是自定义组件</h1>
+                <div>
+                    {{val}}
+                    <button @click="add2">加</button>
+                </div>
+            </div>
+        `,
+        methods: {
+            add2() {
+                this.val++;
+                this.$emit("goparent")
+            }
+        }
+    });
+
+
+    new Vue({
+        el: ".main",
+        data: {
+            count: 0
+        },
+        methods: {
+            getChildData() {
+                this.count++;
+            }
+        }
+    })
+</script>
