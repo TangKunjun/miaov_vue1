@@ -122,9 +122,15 @@
                                 <input type="button" :value="btnValue">
                                 <span></span>
                             </div>
-                            <my-ul v-show="selectShow" :list="list"></my-ul>
+                            <my-ul v-show="selectShow" :list="list" @childData="getChildData"></my-ul>
                         </div>
-                    </section>`
+                    </section>`,
+        methods: {
+            getChildData(val){  // 父组件接收子组件的值
+                this.selectShow = false;
+                this.val = val;
+            }
+        }
     });
 
     Vue.component('my-ul', {
@@ -136,7 +142,8 @@
         `,
         methods: {
             selectValue(item) {
-
+                // 向父组件通信
+                this.$emit("childData", item);
             }
         }
     });

@@ -7,9 +7,17 @@
 </head>
 <body>
       <div class="main">
-        <h2>自定义组件</h2>
-          {{count}}
-        <my-select :value="count" @goparent="getChildData"></my-select>
+        <my-select>
+            <div>我是在父组件的信息</div>
+
+            <div slot="one">我是第一个</div>
+            <div slot="tow">我是第二个</div>
+            <div slot="three">
+                <template>
+                    我是第三个很多
+                </template>
+            </div>
+        </my-select>
 
       </div>
 </body>
@@ -17,32 +25,16 @@
 
 <script>
 
-
+    // slot 类似于angular的ng-content 混合子组件的内容
     Vue.component('my-select', {
-        data: function() {    // 主键的数据必须是函数形式 这样才能独立 如果是对象形式 会共用
-            return {
-                val: this.value
-            };
-        },
-        // 保证value的类型为数值
-        // props: ["value"],   // 接收父组件传来的值
-        props: {
-            value: {
-                // default: 10,  // 默认值 也可以写出函数形式
-                // type: Number,  // 值的类型
-                // type: [Number, String],  // 值的类型
-                // required: true  // 必填
-                validator: function (value) {  // 自定义验证 必须小于10
-                    return value < 10
-                }
-            }
-        },
         template: `<div>
-                <h1>我是自定义组件</h1>
-                <div>
-                    {{val}}
-                    <button @click="add2">加</button>
-                </div>
+                <slot>我是默认结构，如果父组件没有插入东西，我就会选择</slot>
+                <p>这是第1个内容</p>
+                <p>这是第2个内容</p>
+                <p>这是第3个内容</p>
+                <slot name="one">我是默认1</slot>
+                <slot name="three">我是默认3</slot>
+                <slot name="tow">我是默认2</slot>
             </div>
         `,
         methods: {

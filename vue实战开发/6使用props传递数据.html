@@ -92,11 +92,17 @@
 <body>
       <div class="main">
         <h2>自定义下拉框</h2>
-        <my-select></my-select>
 
+          <table>     <!--自定义标签不符合table的子内容 浏览器自动将自定义标签放到table外面-->
+            <my-select btn-value="查询"></my-select>
+          </table>
+
+          <table> <!--用is可以拓展html-->
+              <tr is="my-select"></tr>
+          </table>
 
           <h2>自定义下拉框2</h2>
-          <my-select></my-select>
+          <my-select btn-value="搜索"></my-select>
       </div>
 </body>
 </html>
@@ -105,16 +111,21 @@
     var list = [];
 
 
-
     Vue.component('my-select', {
+        data: function() {    // 主键的数据必须是函数形式 这样才能独立 如果是对象形式 会共用
+            return {
+                selectShow: false
+            };
+        },
+        props: ["btnValue"],   // 接收父组件传来的值
         template: ` <section class="warp">
                         <div class="searchIpt clearFix">
                             <div class="clearFix">
-                                <input type="text" value="" class="keyWord">
-                                <input type="button" value="查询">
+                                <input type="text" value="" class="keyWord" @click="selectShow=!selectShow">
+                                <input type="button" :value="btnValue">
                                 <span></span>
                             </div>
-                            <ul class="list">
+                            <ul class="list" v-show="selectShow">
                                 <li>html+css</li>
                                 <li>html5+css3</li>
                                 <li>javascript</li>

@@ -93,57 +93,64 @@
       <div class="main">
         <h2>自定义下拉框</h2>
 
-          <table>     <!--自定义标签不符合table的子内容 浏览器自动将自定义标签放到table外面-->
-            <my-select btn-value="查询"></my-select>
+          <table>
+            <my-select btn-value="查询" :list="list.list1"></my-select>
           </table>
 
-          <table> <!--用is可以拓展html-->
-              <tr is="my-select"></tr>
-          </table>
 
           <h2>自定义下拉框2</h2>
-          <my-select btn-value="搜索"></my-select>
+          <my-select btn-value="搜索" :list="list.list2"></my-select>
       </div>
 </body>
 </html>
 
 <script>
-    var list = [];
 
 
     Vue.component('my-select', {
         data: function() {    // 主键的数据必须是函数形式 这样才能独立 如果是对象形式 会共用
             return {
-                selectShow: false
+                selectShow: false,
+                val: ""
             };
         },
-        props: ["btnValue"],   // 接收父组件传来的值
+        props: ["btnValue", "list"],   // 接收父组件传来的值
         template: ` <section class="warp">
                         <div class="searchIpt clearFix">
                             <div class="clearFix">
-                                <input type="text" value="" class="keyWord" @click="selectShow=!selectShow">
+                                <input type="text" :value="val" class="keyWord" @click="selectShow=!selectShow">
                                 <input type="button" :value="btnValue">
                                 <span></span>
                             </div>
-                            <ul class="list" v-show="selectShow">
-                                <li>html+css</li>
-                                <li>html5+css3</li>
-                                <li>javascript</li>
-                                <li>angular</li>
-                                <li>react</li>
-                                <li>vue</li>
-                                <li>jquery</li>
-                                <li>nodejs</li>
-                            </ul>
+                            <my-ul v-show="selectShow" :list="list"></my-ul>
                         </div>
                     </section>`
-    })
+    });
 
+    Vue.component('my-ul', {
+        props: ["list"],
+        template: `
+            <ul class="list" >
+                                <li v-for="item in list" @click="selectValue(item)">{{item}}</li>
+                            </ul>
+        `,
+        methods: {
+            selectValue(item) {
+
+            }
+        }
+    });
+
+
+    var data = {
+        list1: ["北京", "上海", "广州", "深圳"],
+        list2: ["html+css", "html5+css3", "javascript", "angular", "react", "vue", "jquery", "nodejs"],
+    };
 
     new Vue({
         el: ".main",
         data: {
-
+            list: data
         },
         methods: {
 
