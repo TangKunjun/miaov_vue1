@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-for="(item, index) in msg" @click="current = index">{{item.title}}</button>
+        <div v-for="(item, index) in msg" v-if="index === current">   
+            <div v-for="data in item.content">{{data}}</div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var message = [
+        {
+            title: '选项1',
+            content: [1,2,3,4,5,6,7,8]
+        },
+        {
+            title: '选项2',
+            content: ["a", "b", "c", "d"]
+        }
+    ];
+    var vm = new Vue({
+        el: "#app",  
+        data: {    
+            msg: message,
+            current: 0
+        }
+    })
+
+</script>
