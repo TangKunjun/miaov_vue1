@@ -16,6 +16,9 @@
             </slot>
 
         </div>
+        <div>
+            {{$store.state.n}}
+        </div>
     </div>
 </template>
 
@@ -39,7 +42,9 @@
         },
         methods: {
             okHandle() {
-                this.$emit("on-ok", 123)
+                this.$emit("on-ok", 123);
+
+                this.$store.commit("changeN", 1000);
             },
             cancelHandle() {
                 this.$emit("on-no");

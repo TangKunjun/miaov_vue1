@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="src/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <div v-drag.limit="12313" style="width: 200px;height: 200px;background: red;position: absolute">
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var message = "hellow vue";
+
+    Vue.directive("drag", {
+        bind(el, binding) { // el绑定的元素  binding 传进来的值
+            console.log("当指令绑定到元素上执行", binding.value);
+            el.onmousedown = function (e) {
+                var disX = e.clientX - el.offsetLeft;
+                var disY = e.clientY - el.offsetTop;
+                document.onmousemove = function (e) {
+                    el.style.left = e.clientX - disX + "px";
+                    el.style.top = e.clientY - disY + "px";
+                };
+                document.onmouseup = function () {
+                    document.onmousemove = null;
+                };
+                return null;
+            };
+        }
+    })
+
+
+    var vm = new Vue({
+        el: "#app",  // element 可以写css选择器或node节点 表示这个html归vue管
+        data: {     // 数据对象
+            msg: message
+        }
+    })
+
+    vm.msg = "改写了";
+</script>

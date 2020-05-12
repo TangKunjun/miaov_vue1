@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e2629c70-9302-4d8c-a7b5-d13c305f1598" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/vue1/0.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/vue1/src/fileSaver.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="e2629c70-9302-4d8c-a7b5-d13c305f1598" name="Default Changelist" comment="组件之间的通信">
+      <change afterPath="$PROJECT_DIR$/vue1/15指令的钩子函数.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue_cli/vue3_kugou/src/components/navBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue_cli/vue3_kugou/src/components/searchBar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue_cli/vue3_kugou/src/routes/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue_cli/vue3_kugou/src/routes/routes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue_cli/vue3_kugou/src/server/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue_cli/vue3_kugou/src/store/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/NewStrong.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/Plist.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/Singer.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/rank.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/search.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vue_cli/vue3_kugou/vue.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue实战开发/15动态组件.html" beforeDir="false" afterPath="$PROJECT_DIR$/vue实战开发/15动态组件.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/dist/logger.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/dist/logger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/dist/vuex.common.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/dist/vuex.esm.browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/dist/vuex.esm.browser.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/dist/vuex.esm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/dist/vuex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/dist/vuex.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/types/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/types/helpers.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/types/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/vuex/types/vue.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/src/components/Model.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/src/components/Model.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue实战开发/10props验证.html" beforeDir="false" afterPath="$PROJECT_DIR$/vue实战开发/10props验证.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,76 +47,188 @@
     <session id="1201086745">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="4" />
+          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.2" value="4" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="3" />
+          <entry key="project.opened" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="1" />
-          <entry key="md" value="1" />
-          <entry key="vue" value="2" />
+          <entry key="html" value="56" />
+          <entry key="js" value="33" />
+          <entry key="json" value="9" />
+          <entry key="md" value="12" />
+          <entry key="png" value="5" />
+          <entry key="vue" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="1" />
-          <entry key="Markdown" value="1" />
-          <entry key="Vue.js" value="2" />
+          <entry key="HTML" value="56" />
+          <entry key="Image" value="5" />
+          <entry key="JSON" value="9" />
+          <entry key="JavaScript" value="33" />
+          <entry key="Markdown" value="12" />
+          <entry key="Vue.js" value="47" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="2" />
-          <entry key="md" value="215" />
-          <entry key="vue" value="3" />
+          <entry key="html" value="452" />
+          <entry key="js" value="778" />
+          <entry key="md" value="1513" />
+          <entry key="txt" value="7" />
+          <entry key="vue" value="3314" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="2" />
-          <entry key="Markdown" value="215" />
-          <entry key="Vue.js" value="3" />
+          <entry key="HTML" value="452" />
+          <entry key="JavaScript" value="778" />
+          <entry key="Markdown" value="1513" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Vue.js" value="3314" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts">
+        <counts>
+          <entry key="TypeScriptServerServiceImpl" value="1" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue_cli/vuex/src/App.vue">
+        <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
-              <folding>
-                <element signature="e#138#186#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="220">
+              <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/rank.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/vue_cli/vuex/src/components/hello2.vue">
+        <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/components/navBar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+            <state relative-caret-position="289">
+              <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vue_cli/vuex/src/store/index.js">
+        <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
+            <state relative-caret-position="204">
+              <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
               <folding>
-                <element signature="e#0#22#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/routes/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+              <folding>
+                <element signature="e#1#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/Plist.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="31" column="4" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="41" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/Singer.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="87" lean-forward="true" selection-start-line="3" selection-start-column="87" selection-end-line="3" selection-end-column="87" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/server/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="39" column="3" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/NewStrong.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>update</find>
+      <find>focus</find>
+      <find>store</find>
+      <find>proxy</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -97,8 +238,47 @@
       <list>
         <option value="$PROJECT_DIR$/vue_cli/vuex/src/App.vue" />
         <option value="$PROJECT_DIR$/vue_cli/vuex/README.md" />
-        <option value="$PROJECT_DIR$/vue_cli/vuex/src/store/index.js" />
         <option value="$PROJECT_DIR$/vue_cli/vuex/src/components/hello2.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/ele/package.json" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3element/src/App.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3element/src/components/KInput.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3element/src/components/KForm.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3element/src/components/FormTest.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3element/src/components/KFormItem.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3element/README.md" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/src/components/model.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/src/App.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/src/store.js" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/src/components/Model.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/README.md" />
+        <option value="$PROJECT_DIR$/vue1/0.html" />
+        <option value="$PROJECT_DIR$/vue1/15指令的钩子函数.html" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/components/HelloWorld.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/postcss.config.js" />
+        <option value="$PROJECT_DIR$/node_modules/mint-ui/lib/postcss.config.js" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/search.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/vue.config.js" />
+        <option value="$PROJECT_DIR$/vue实战开发/3watch深度监控数据.html" />
+        <option value="$PROJECT_DIR$/vue实战开发/10props验证.html" />
+        <option value="$PROJECT_DIR$/vue_cli/vuex/src/store/index.js" />
+        <option value="$PROJECT_DIR$/vue1/13template.html" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/components/searchBar.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/babel.config.js" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/Home.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/store/index.js" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/public/index.html" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/server/index.js" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/App.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/NewStrong.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/rank.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/Plist.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/router.js" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/Singer.vue" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/routes/router.js" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/routes/routes.js" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/routes/index.js" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/main.js" />
+        <option value="$PROJECT_DIR$/vue_cli/vue3_kugou/src/components/navBar.vue" />
       </list>
     </option>
   </component>
@@ -115,18 +295,25 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/node_modules" />
+    <handled-path value="$PROJECT_DIR$/vue_cli/vue3_kugou/node_modules" />
+    <handled-path value="$PROJECT_DIR$/vue_cli/vue3element/node_modules" />
     <handled-path value="$PROJECT_DIR$/vue_cli/vuex/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/node_modules/vuex/package.json" />
+      <path value="$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/package.json" />
+      <path value="$PROJECT_DIR$/vue_cli/vue3_kugou/package.json" />
+      <path value="$PROJECT_DIR$/vue_cli/vue3element/package.json" />
       <path value="$PROJECT_DIR$/vue_cli/vuex/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="width" value="1440" />
-    <option name="height" value="877" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -192,6 +379,7 @@
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -211,20 +399,27 @@
               <item name="vue入门" type="b2602c69:ProjectViewProjectNode" />
               <item name="vue入门" type="462c0819:PsiDirectoryNode" />
               <item name="vue_cli" type="462c0819:PsiDirectoryNode" />
-              <item name="vuex" type="462c0819:PsiDirectoryNode" />
+              <item name="vue3_kugou" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vue入门" type="b2602c69:ProjectViewProjectNode" />
               <item name="vue入门" type="462c0819:PsiDirectoryNode" />
               <item name="vue_cli" type="462c0819:PsiDirectoryNode" />
-              <item name="vuex" type="462c0819:PsiDirectoryNode" />
+              <item name="vue3_kugou" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vue入门" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue入门" type="462c0819:PsiDirectoryNode" />
+              <item name="vue_cli" type="462c0819:PsiDirectoryNode" />
+              <item name="vue3_kugou" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="vue入门" type="b2602c69:ProjectViewProjectNode" />
               <item name="vue入门" type="462c0819:PsiDirectoryNode" />
               <item name="vue_cli" type="462c0819:PsiDirectoryNode" />
-              <item name="vuex" type="462c0819:PsiDirectoryNode" />
+              <item name="vue3_kugou" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -232,28 +427,62 @@
               <item name="vue入门" type="b2602c69:ProjectViewProjectNode" />
               <item name="vue入门" type="462c0819:PsiDirectoryNode" />
               <item name="vue_cli" type="462c0819:PsiDirectoryNode" />
-              <item name="vuex" type="462c0819:PsiDirectoryNode" />
+              <item name="vue3_kugou" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vue入门" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue入门" type="462c0819:PsiDirectoryNode" />
+              <item name="vue_cli" type="462c0819:PsiDirectoryNode" />
+              <item name="vue3_kugou" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vue入门" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue入门" type="462c0819:PsiDirectoryNode" />
+              <item name="vue_cli" type="462c0819:PsiDirectoryNode" />
+              <item name="vue3_kugou" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="vue入门" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue入门" type="462c0819:PsiDirectoryNode" />
+              <item name="vue_cli" type="462c0819:PsiDirectoryNode" />
+              <item name="vuex" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1589298943616" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
+    <property name="settings.editor.selected.configurable" value="copyright" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/vue_cli/vue3_kugou/src/routes" />
+      <recent name="$PROJECT_DIR$/vue_cli/vue3_kugou" />
+      <recent name="$PROJECT_DIR$/vue_cli/vue3_kugou/src/server" />
+      <recent name="$PROJECT_DIR$/vue_cli/vue3_kugou/node_modules" />
+      <recent name="$PROJECT_DIR$/node_modules/mint-ui/lib" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -267,6 +496,16 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="13template.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/vue入门/vue1/13template.html">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.13template.html" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration>$USER_HOME$/.subversion</configuration>
   </component>
@@ -277,44 +516,74 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582207958359</updated>
-      <workItem from="1582207961190" duration="623000" />
+      <workItem from="1582207961190" duration="783000" />
+      <workItem from="1583765593409" duration="4348000" />
+      <workItem from="1584343887862" duration="6128000" />
+      <workItem from="1584371235209" duration="4000" />
+      <workItem from="1584446545554" duration="46000" />
+      <workItem from="1584538002039" duration="8838000" />
+      <workItem from="1584598179813" duration="7882000" />
+      <workItem from="1584886182194" duration="598000" />
+      <workItem from="1585006983777" duration="1283000" />
+      <workItem from="1585314763804" duration="2628000" />
+      <workItem from="1585318223652" duration="4383000" />
+      <workItem from="1585399745719" duration="502000" />
+      <workItem from="1585412348085" duration="300000" />
+      <workItem from="1585451064731" duration="570000" />
+      <workItem from="1585479026600" duration="2929000" />
+      <workItem from="1585613149887" duration="2368000" />
+      <workItem from="1585642419340" duration="446000" />
+      <workItem from="1585714385414" duration="10000" />
+      <workItem from="1585791959313" duration="5866000" />
+      <workItem from="1587696600417" duration="89000" />
+      <workItem from="1588864130029" duration="2298000" />
+      <workItem from="1589081971902" duration="11472000" />
     </task>
+    <task id="LOCAL-00001" summary="组件之间的通信">
+      <created>1584546581454</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584546581454</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="623000" />
+    <option name="totallyTimeSpent" value="63771000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24678111" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.3299363" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.30361447" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -323,41 +592,333 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="组件之间的通信" />
+    <option name="LAST_COMMIT_MESSAGE" value="组件之间的通信" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vue_cli/vuex/README.md">
+    <entry file="file://$PROJECT_DIR$/vue_cli/vuex/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vuex/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-88" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vuex/src/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/0.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/10object.defineProperty.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue实战开发/folder-tree.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3element/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="344">
-            <caret line="93" column="3" lean-forward="true" selection-start-line="93" selection-start-column="3" selection-end-line="93" selection-end-column="3" />
+          <first_editor relative-caret-position="867">
+            <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue_cli/vuex/src/App.vue">
+    <entry file="file://$PROJECT_DIR$/vue1/过程.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/4v-for.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/5相应的数据变化.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="-220" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/6数组的响应变化.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-101" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/7条件判断.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/8tab实例.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="73" column="9" lean-forward="true" selection-start-line="68" selection-start-column="8" selection-end-line="73" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/9计算属性.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-75">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/11其他指令.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-203" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/12事件修饰符.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-212" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/14render.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/我的文件/开发文件/工作文件/柬埔寨/mobileCach2-1/cordova-hcp.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/15指令的钩子函数.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_conpnent_emit/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="2414">
+            <caret line="142" column="1" selection-start-line="142" selection-start-column="1" selection-end-line="142" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3element/src/components/FormTest.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3element/src/components/HelloWorld.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3element/src/components/KForm.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="10" selection-start-line="9" selection-start-column="8" selection-end-line="13" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3element/src/components/KInput.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3element/src/components/KFormItem.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/13template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="37" lean-forward="true" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue1/虚拟DOM示意图.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/assets/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/search.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/node_modules/mint-ui/lib/cell/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/babel.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="3" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/vue.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vuex/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="802">
+            <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
           <folding>
-            <element signature="e#138#186#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue_cli/vuex/src/store/index.js">
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/components/searchBar.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="33" column="3" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
+        <state relative-caret-position="136">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vue_cli/vuex/src/components/hello2.vue">
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+        <state relative-caret-position="17">
+          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+          <folding>
+            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/Home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/NewStrong.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/rank.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="9" lean-forward="true" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/Plist.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="31" column="4" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="41" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/views/Singer.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="87" lean-forward="true" selection-start-line="3" selection-start-column="87" selection-end-line="3" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/server/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="3" selection-start-line="39" selection-start-column="2" selection-end-line="39" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="13" column="18" lean-forward="true" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding>
+            <element signature="e#1#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue_cli/vue3_kugou/src/components/navBar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
         </state>
       </provider>
     </entry>
