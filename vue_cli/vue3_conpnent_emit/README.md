@@ -69,7 +69,13 @@
         this.$emit("input", false)
     }
 ```
-v-model的本质是向子组件绑定value，然后监听input事件
+v-model的本质是向子组件绑定value，然后监听input事件；也可以通过model属性自定义
+```
+model: {
+    event: 'abc', // 将事件input改成了abc
+    prop: 'data',  // 绑定的value改成了data
+}
+```
 
 
 ##事件总线 event bus
