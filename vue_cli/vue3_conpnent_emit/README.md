@@ -173,3 +173,28 @@ export default {
     },
 }
 ```
+myObservable - 使用 SafeObserver
+
+```
+function myObservable(observer) {
+  const safeObserver = new SafeObserver(observer); // 创建SafeObserver对象
+  const datasource = new DataSource(); // 创建数据源
+  datasource.ondata = (e) => safeObserver.next(e);
+  datasource.onerror = (err) => safeObserver.error(err);
+  datasource.oncomplete = () => safeObserver.complete();
+
+  safeObserver.unsub = () => { // 为SafeObserver对象添加unsub方法
+    datasource.destroy();
+  };
+  // 绑定this上下文，并返回unsubscribe方法
+  return safeObserver.unsubscribe.bind(safeObserver); 
+}
+```
+使用示例：
+```
+const unsub = myObservable({
+  next(x) { console.log(x); },
+  error(err) { console.error(err); },
+  complete() { console.log('done')}
+});
+```
