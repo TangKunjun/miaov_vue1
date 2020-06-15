@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./kvue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <p>{{message}}</p>
+        <div>
+            <div>{{message}}</div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var kvue = new Kvue({
+        el: "#app",
+        data: {
+            message: "测试数据"
+        }
+    })
+    kvue._data.message =  "123"
+</script>
