@@ -12,6 +12,8 @@
         <div>
             <div>{{message}}</div>
         </div>
+        <hr>
+        <div>{{name}}</div>
     </div>
 </body>
 </html>
@@ -19,8 +21,10 @@
     var kvue = new Kvue({
         el: "#app",
         data: {
-            message: "测试数据"
+            message: "测试数据",
+            name: "names"
         }
     })
-    kvue._data.message =  "123"
+    kvue._data.message =  "123";
+    kvue._data.name = "tkj"
 </script>

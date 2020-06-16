@@ -18,15 +18,21 @@ class Kvue {
     observer(data) {
         Object.keys(data).forEach(key => {
             let value = data[key];
+            let dep = new Dep(); // 实例化发布者
             Object.defineProperty(data, key, {
                 configurable: true,
                 enumerable: true,
                 get() {
+                    if(Dep.target){ // 如果没有初始化观察者 则不执行
+                        dep.addSub(Dep.target)
+                    }
                     return value;
                 },
                 set(newValue) {
-                    console.log("set", newValue)
+                    console.log("set", newValue);
+                    if (value!==newValue) 
                     value = newValue;
+                    dep.notify(newValue); // 执行发布
                 }
             })
         })
@@ -49,7 +55,13 @@ class Kvue {
                 let reg = /\{\{\s*(\S*)\s*\}\}/;     // 有可能是这样写{{ message }}  左右有空格
                 if (reg.test(nodeContent)) {
                     // console.log(RegExp.$1)
-                    node.textContent = this._data[RegExp.$1];
+                    node.textContent = this._data[RegExp.$1];  // 这里会执行一次get()数组 这个时候还没有watcher实例不能加入到subs数组 所以在get()上面做了一个判断
+
+                    // 初始化的时候 每一个插值变成观察者
+                    new Watcher(this, RegExp.$1, value => {
+                        node.textContent = value;
+                    });
+
                 }
 
             } else if (node.nodeType === 1) {  // 处理标签
@@ -62,4 +74,33 @@ class Kvue {
         })
     }
 
+}
+
+// 发布订阅中发布者
+class Dep {
+    constructor() {
+        this.subs = [];
+    }
+    addSub(sub) {
+        this.subs.push(sub)
+    }
+    notify(node) {
+        this.subs.forEach(item => item.update(node))
+    }
+}
+
+// 订阅者
+class Watcher {
+    constructor(vm, exp, cb) {
+        this.cb = cb;
+        Dep.target = this;  // 相当将new Watcher这个实例绑定到了Dep.target上面
+
+        vm._data[exp]; // 访问了一次get() 会把watcher添加到Dep的subs数组里面
+
+        Dep.target = null; // 防止重复添加
+    }
+    update(data) {
+        this.cb(data);  // 回调
+        console.log( "更新了")
+    }
 }
