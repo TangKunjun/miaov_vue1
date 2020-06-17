@@ -64,8 +64,26 @@ class Kvue {
 
                 }
 
-            } else if (node.nodeType === 1) {  // 处理标签
-                // this.compileNode(node)
+            } else if (node.nodeType === 1) {  // 处理标签 (包括input的双向绑定)
+                let attrs = node.attributes;
+                Array.from(attrs).forEach(attr => {
+                    let attrName = attr.name;
+                    let attrValue = attr.value;
+                    if(attrName.indexOf("k-")===0){
+                        attrName = attrName.substr(2);
+                        if(attrName === "model") {
+                            node.value = this._data[attrValue]
+                        }
+                        node.addEventListener("input", element => {
+                            this._data[attrValue] = element.target.value;
+                        })
+                    }
+
+                    // 初始化的时候 每一个插值变成观察者
+                    new Watcher(this, attrValue, value => {
+                        node.value = value;
+                    });
+                })
             }
 
             if(node.childNodes.length > 0) { // 如果还有子节点就一直递归
