@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "array-find-index": "^1.0.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "core-js": "^2.6.5",
     "mint-ui": "^2.2.13",
     "raf.js": "0.0.4",
